@@ -53,10 +53,21 @@ def get_pet_labels(image_dir):
     #print (file)
     
     for filename in dirs:
+        #isalpha ? edge case
+        #split to extract the word of file name, then empty list create (temp label), for loop then conditional clause consider isalpha, add ot petlabel string, lower and add empty space, strip()  
         if filename[0] != ".":
-            k = filename.lower().replace('_',' ').replace('.jpg','').strip()    
-            val = [''.join([i for i in k if not i.isdigit()])]
-            results_dic[filename] = val
+            k = filename.lower()
+            wordlist = k.split("_")
+            pet_name = ""
+            for word in wordlist:
+                if word.isalpha():
+                    pet_name += word + " "
+            pet_name = pet_name.strip()
+            results_dic[filename] = [pet_name]
+#             k = filename.lower().replace('_',' ').replace('.jpg','').strip()    
+#             val = ''.join([i for i in k if not i.isdigit()]).strip()
+#             results_dic[filename] = [val]
+#             #print(" val =  " + val)
         
          
     return results_dic

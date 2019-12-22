@@ -79,3 +79,24 @@ def classify_images(images_dir, results_dic, model):
         
           
     None 
+    
+    #     for key in results_dic:
+#         model_label = classifier(images_dir + key, model)
+#         model_label = model_label.lower().strip()
+#         #print("model_label:")
+#         #print(model_label)
+#         templist = model_label.split(",")
+#         #templist = [x.strip() for x in templist] 
+#         #print(" templist:") 
+#         #print(templist)
+#         if len(templist)==1: 
+#             match = 0
+#         else:
+#             match = 1
+#         #results_dic[key].append(model_label)
+#         #results_dic[key].append(match)
+#         results_dic[key].extend([model_label,match])
+
+        
+          
+#     None 
